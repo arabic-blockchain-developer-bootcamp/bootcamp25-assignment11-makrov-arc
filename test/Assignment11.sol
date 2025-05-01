@@ -22,7 +22,7 @@ contract FallbackTest is Test {
 
         // Send ether to the contract trigger receive() and become the owner
         (bool success, ) = address(fallbackContract).call{value: 1 wei}("");
-        require(success)
+        require(success);
 
         // Withdraw all funds
         fallbackContract.withdraw();
